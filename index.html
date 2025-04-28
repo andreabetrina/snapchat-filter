@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Capture App with Filters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        #camera-container {
+            width: 100%;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        #video {
+            background-color: #f0f0f0;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ccc;
+        }
+        
+        #canvas {
+            display: none;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        #photo-container {
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .controls {
+            margin: 20px 0;
+        }
+        
+        button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        select {
+            padding: 10px;
+            margin: 0 5px;
+        }
+        
+        .filter-options {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photo Capture App</h1>
+    
+    <div class="controls">
+        <button id="start-camera">Start Camera</button>
+        <button id="take-photo" disabled>Take Photo</button>
+    </div>
+    
+    <div id="camera-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <div class="filter-options">
+        <label for="background-filter">Select Background Filter:</label>
+        <select id="background-filter">
+            <option value="none">No Filter</option>
+            <option value="green">Green Screen</option>
+            <option value="blue">Blue Screen</option>
+        </select>
+    </div>
+    
+    <div id="photo-container"></div>
+    
+    <div class="controls">
+        <button id="download-btn" disabled>Download Photo</button>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
